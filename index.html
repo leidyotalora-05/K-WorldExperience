@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-World Experience</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- Pantalla de inicio -->
+    <section id="inicio" class="pantalla activa">
+
+        <div class="contenido-inicio">
+
+            <span class="material-icons icono-principal">
+                travel_explore
+            </span>
+
+            <h1>K-World Experience</h1>
+
+            <p>
+                Descubre Corea del Sur y conoce sus lugares,
+                cultura, gastronomía y actividades.
+            </p>
+
+            <button id="botonComenzar">
+                Comenzar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pantalla de ciudades -->
+    <section id="ciudades" class="pantalla">
+
+        <div class="contenido">
+
+            <h2>¿Qué ciudad quieres conocer?</h2>
+
+            <div class="tarjetas-ciudades">
+
+                <button class="tarjeta" onclick="mostrarDestinos('seul')">
+
+                    <span class="material-icons">
+                        location_city
+                    </span>
+
+                    <h3>Seúl</h3>
+
+                    <p>
+                        Historia, cultura y entretenimiento.
+                    </p>
+
+                </button>
+
+
+                <button class="tarjeta" onclick="mostrarDestinos('busan')">
+
+                    <span class="material-icons">
+                        water
+                    </span>
+
+                    <h3>Busan</h3>
+
+                    <p>
+                        Playas, gastronomía y paisajes.
+                    </p>
+
+                </button>
+
+
+                <button class="tarjeta" onclick="mostrarDestinos('jeju')">
+
+                    <span class="material-icons">
+                        park
+                    </span>
+
+                    <h3>Jeju</h3>
+
+                    <p>
+                        Naturaleza, cultura y actividades.
+                    </p>
+
+                </button>
+
+            </div>
+
+
+            <button class="boton-volver" onclick="mostrarPantalla('inicio')">
+                Volver
+            </button>
+
+
+            <button onclick="mostrarPantalla('favoritos')">
+
+                <span class="material-icons">
+                    favorite
+                </span>
+
+                Mis favoritos
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pantalla de destinos -->
+    <section id="destinos" class="pantalla">
+
+        <div class="contenido">
+
+            <h2 id="tituloCiudad">
+                Destinos turísticos
+            </h2>
+
+            <p>
+                Selecciona un lugar para conocer más información:
+            </p>
+
+
+            <div class="categorias">
+
+    <button onclick="filtrarDestinos('Historia')">
+        Historia
+    </button>
+
+    <button onclick="filtrarDestinos('Cultura')">
+        Cultura
+    </button>
+
+    <button onclick="filtrarDestinos('Gastronomía')">
+        Gastronomía
+    </button>
+
+    <button onclick="filtrarDestinos('Entretenimiento')">
+        Entretenimiento
+    </button>
+
+    <button onclick="filtrarDestinos('Naturaleza')">
+        Naturaleza
+    </button>
+
+</div>
+
+</div>
+
+
+            <div id="listaDestinos"></div>
+
+
+            <button class="boton-volver" onclick="mostrarPantalla('ciudades')">
+                Volver
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pantalla de detalle -->
+    <section id="detalle" class="pantalla">
+
+        <div class="contenido">
+
+            <span id="iconoDetalle" class="material-icons icono-detalle">
+                account_balance
+            </span>
+
+
+            <h2 id="nombreDetalle">
+                Nombre del lugar
+            </h2>
+
+
+            <p id="descripcionDetalle">
+                Información del lugar.
+            </p>
+
+
+            <p>
+                <strong>Categoría:</strong>
+
+                <span id="categoriaDetalle"></span>
+            </p>
+
+
+            <p>
+                <strong>Ubicación:</strong>
+
+                <span id="ubicacionDetalle"></span>
+            </p>
+
+
+            <button onclick="agregarFavorito()">
+
+                <span class="material-icons">
+                    favorite_border
+                </span>
+
+                Agregar a favoritos
+
+            </button>
+
+
+            <button class="boton-volver" onclick="mostrarPantalla('destinos')">
+                Volver
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pantalla de favoritos -->
+    <section id="favoritos" class="pantalla">
+
+        <div class="contenido">
+
+            <span class="material-icons icono-detalle">
+                favorite
+            </span>
+
+
+            <h2>
+                Mis favoritos
+            </h2>
+
+
+            <p id="mensajeFavoritos">
+                Todavía no tienes lugares favoritos.
+            </p>
+
+
+            <div id="listaFavoritos"></div>
+
+
+            <button class="boton-volver" onclick="mostrarPantalla('ciudades')">
+                Volver a ciudades
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
